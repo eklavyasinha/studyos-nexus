@@ -348,9 +348,16 @@ function ScheduleRecordCard({
                 ? "Revise last incomplete topic instead; prerequisites must be completed in the course map."
                 : undefined
           }
-          onClick={() => onComplete(item)}
+          onClick={(event) => {
+            event.stopPropagation();
+            onComplete(item);
+          }}
         >
-          {done ? <Check size={15} /> : <Circle size={17} />}
+          {done ? (
+            <Check size={15} aria-hidden="true" focusable={false} />
+          ) : (
+            <Circle size={17} aria-hidden="true" focusable={false} />
+          )}
         </button>
         <div className="schedule-record-copy">
           <button
@@ -1542,7 +1549,9 @@ export default function StudySchedule({ recordId }: { recordId?: string }) {
       );
       return;
     }
-    const gated = scheduleGate(current, currentItems);
+    const gated = !isDone(current)
+      ? scheduleGate(current, currentItems)
+      : undefined;
     if (gated) {
       notify(
         `The ${gated} readiness gate is not yet satisfied. Keep this practice incomplete until the real gate is unlocked.`,

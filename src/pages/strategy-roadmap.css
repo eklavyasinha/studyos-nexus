@@ -1,0 +1,1643 @@
+.strategy-roadmap-page {
+  --strategy-surface: var(--surface, #1a1d1a);
+  --strategy-raised: var(--surface-2, #20241f);
+  --strategy-border: var(--border, #2d332c);
+  --strategy-text: var(--text, #edeee7);
+  --strategy-muted: var(--muted, #9aa394);
+  --strategy-accent: var(--accent, #c5ed85);
+  --strategy-soft: var(--accent-soft, rgba(197, 237, 133, 0.08));
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  color: var(--strategy-text);
+}
+
+.strategy-roadmap-page > *,
+.strategy-roadmap-page .panel,
+.strategy-roadmap-page .panel-body {
+  min-width: 0;
+}
+
+.strategy-roadmap-page h2,
+.strategy-roadmap-page h3,
+.strategy-roadmap-page h4,
+.strategy-roadmap-page p {
+  margin-top: 0;
+}
+
+.strategy-roadmap-page h2,
+.strategy-roadmap-page h3,
+.strategy-roadmap-page h4 {
+  color: var(--strategy-text);
+}
+
+.strategy-roadmap-page button,
+.strategy-roadmap-page select,
+.strategy-roadmap-page input,
+.strategy-roadmap-page textarea {
+  min-width: 0;
+}
+
+.strategy-roadmap-page :is(button, select, input, textarea):focus-visible {
+  outline: 2px solid var(--strategy-accent);
+  outline-offset: 3px;
+}
+
+.strategy-header-actions,
+.strategy-focus-links,
+.strategy-howto-links,
+.strategy-gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.strategy-header-actions .button,
+.strategy-focus-links .button,
+.strategy-howto-links .button,
+.strategy-gate-actions .button {
+  font-size: 10px;
+}
+
+.strategy-priority-banner {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 17px;
+  border: 1px solid
+    color-mix(in srgb, var(--strategy-accent) 28%, var(--strategy-border));
+  border-radius: 11px;
+  background:
+    linear-gradient(105deg, var(--strategy-soft), transparent 68%),
+    var(--strategy-surface);
+}
+
+.strategy-priority-mark,
+.strategy-overview-icon,
+.strategy-focus-icon,
+.strategy-gate-icon,
+.strategy-mba-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--strategy-accent);
+  border: 1px solid color-mix(in srgb, var(--strategy-accent) 24%, transparent);
+  background: var(--strategy-soft);
+}
+
+.strategy-priority-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.strategy-priority-banner > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.strategy-priority-banner strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.strategy-priority-banner p {
+  max-width: 960px;
+  margin: 4px 0 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.strategy-priority-banner > .badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.strategy-deep-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 10px 12px;
+  border: 1px solid
+    color-mix(in srgb, var(--warning, #e8be7f) 34%, var(--strategy-border));
+  border-radius: 8px;
+  color: var(--warning, #e8be7f);
+  font-size: 10px;
+}
+
+.strategy-deep-link span {
+  flex: 1;
+  min-width: 190px;
+  color: var(--strategy-muted);
+}
+
+.strategy-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 15px;
+}
+
+.strategy-overview-card,
+.strategy-howto-card,
+.strategy-focus-panel,
+.strategy-gates-panel,
+.strategy-mba-panel {
+  background:
+    radial-gradient(
+      circle at 94% 0%,
+      color-mix(in srgb, var(--strategy-accent) 9%, transparent),
+      transparent 36%
+    ),
+    var(--strategy-surface);
+}
+
+.strategy-overview-card .panel-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+}
+
+.strategy-overview-icon {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 23px;
+  border-radius: 12px;
+}
+
+.strategy-section-label,
+.strategy-phase-month {
+  display: block;
+  color: var(--strategy-muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.strategy-overview-card h2 {
+  margin: 5px 0 9px;
+  font-size: 24px;
+  font-weight: 540;
+  letter-spacing: -0.045em;
+}
+
+.strategy-overview-card p {
+  max-width: 610px;
+  margin-bottom: 22px;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.strategy-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--strategy-border);
+}
+
+.strategy-stat-row .stat {
+  min-width: 0;
+}
+
+.strategy-stat-row .stat-value {
+  font-size: 18px;
+}
+
+.strategy-stat-row .stat-hint {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.strategy-howto-card .panel-heading h2,
+.strategy-timeline-panel .panel-heading h2,
+.strategy-gates-panel .panel-heading h2,
+.strategy-mba-panel .panel-heading h2 {
+  font-size: 15px;
+}
+
+.strategy-howto-card .panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.strategy-howto-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--strategy-accent);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.strategy-howto-row span {
+  color: var(--strategy-muted);
+}
+
+.strategy-howto-row strong {
+  color: var(--strategy-text);
+  font-weight: 620;
+}
+
+.strategy-review-copy {
+  margin: 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--strategy-border);
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.strategy-howto-links {
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid var(--strategy-border);
+}
+
+.strategy-timeline-panel .panel-body {
+  padding-top: 5px;
+}
+
+.strategy-timeline-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 19px;
+}
+
+.strategy-timeline-intro p {
+  max-width: 810px;
+  margin: 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.strategy-timeline-intro .button {
+  flex: 0 0 auto;
+  font-size: 10px;
+}
+
+.strategy-phase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.strategy-phase-card {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid
+    color-mix(in srgb, var(--strategy-accent) 32%, var(--strategy-border));
+  border-radius: 11px;
+  background:
+    linear-gradient(
+      112deg,
+      color-mix(in srgb, var(--strategy-accent) 5%, transparent),
+      transparent 58%
+    ),
+    var(--strategy-surface);
+}
+
+.strategy-phase-card.is-scaffold {
+  border-color: var(--strategy-border);
+  background: var(--strategy-surface);
+}
+
+.strategy-phase-topline,
+.strategy-phase-date-row,
+.strategy-phase-progress .row-between,
+.strategy-suggested-block .row-between,
+.strategy-real-milestones .row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.strategy-phase-topline {
+  align-items: flex-start;
+}
+
+.strategy-phase-topline h3 {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 570;
+  letter-spacing: -0.025em;
+}
+
+.strategy-phase-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.strategy-phase-actions .badge {
+  white-space: nowrap;
+}
+
+.strategy-phase-date-row {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 9px;
+  color: var(--strategy-muted);
+  font-size: 9px;
+}
+
+.strategy-phase-summary {
+  max-width: 900px;
+  margin: 14px 0 15px;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.strategy-priority-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 17px;
+  padding: 13px 0;
+  border-top: 1px solid var(--strategy-border);
+  border-bottom: 1px solid var(--strategy-border);
+}
+
+.strategy-priority-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.strategy-priority-list svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--strategy-accent);
+}
+
+.strategy-phase-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.strategy-phase-progress .progress {
+  height: 5px;
+}
+
+.strategy-suggested-block,
+.strategy-real-milestones {
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid var(--strategy-border);
+}
+
+.strategy-small-button {
+  min-height: 27px;
+  padding: 5px 8px;
+  font-size: 9px;
+}
+
+.strategy-suggested-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.strategy-suggested-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 7px;
+  background: var(--strategy-raised);
+  color: var(--strategy-muted);
+  font-size: 9px;
+  text-align: left;
+}
+
+.strategy-suggested-row:not(:disabled):hover {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 40%,
+    var(--strategy-border)
+  );
+  color: var(--strategy-text);
+}
+
+.strategy-suggested-row svg:first-child {
+  flex: 0 0 auto;
+  color: var(--strategy-accent);
+}
+
+.strategy-suggested-row span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.strategy-suggested-row svg:last-child {
+  flex: 0 0 auto;
+}
+
+.strategy-milestone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.strategy-milestone-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 7px;
+  background: var(--strategy-raised);
+}
+
+.strategy-milestone-row.is-done {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 35%,
+    var(--strategy-border)
+  );
+  background: color-mix(
+    in srgb,
+    var(--strategy-accent) 5%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-milestone-check {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--strategy-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--strategy-accent);
+}
+
+.strategy-milestone-row.is-done .strategy-milestone-check {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 50%,
+    var(--strategy-border)
+  );
+  background: var(--strategy-soft);
+}
+
+.strategy-milestone-title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--strategy-text);
+  text-align: left;
+}
+
+.strategy-milestone-title strong {
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 580;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.strategy-milestone-title span {
+  overflow: hidden;
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.strategy-milestone-row .badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.strategy-inline-empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 9px;
+  padding: 10px 11px;
+  border: 1px dashed var(--strategy-border);
+  border-radius: 7px;
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.strategy-inline-empty svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--warning, #e8be7f);
+}
+
+.strategy-tab-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.strategy-focus-panel .panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.strategy-focus-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.strategy-focus-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+}
+
+.strategy-focus-heading > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.strategy-focus-heading h2 {
+  margin: 3px 0 0;
+  font-size: 16px;
+  font-weight: 560;
+  letter-spacing: -0.025em;
+}
+
+.strategy-focus-heading > .badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.strategy-focus-panel p {
+  max-width: 980px;
+  margin: 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.strategy-manager-panel .record-manager {
+  margin: -5px -4px -7px;
+}
+
+.strategy-manager-panel .record-manager-heading h2 {
+  font-size: 14px;
+}
+
+.strategy-manager-panel .empty-state {
+  min-height: 155px;
+  padding: 22px 12px;
+}
+
+.strategy-gates-panel .panel-body {
+  padding-top: 5px;
+}
+
+.strategy-gates-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 920px;
+  margin-bottom: 17px;
+  color: var(--strategy-accent);
+}
+
+.strategy-gates-intro p {
+  margin: 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.strategy-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.strategy-gate-card {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--strategy-raised) 62%, transparent);
+}
+
+.strategy-gate-card.is-unlocked {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 42%,
+    var(--strategy-border)
+  );
+  background:
+    linear-gradient(120deg, var(--strategy-soft), transparent 80%),
+    var(--strategy-raised);
+}
+
+.strategy-gate-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.strategy-gate-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+}
+
+.strategy-gate-heading > div:nth-child(2) {
+  min-width: 0;
+}
+
+.strategy-gate-heading h3 {
+  margin: 3px 0 0;
+  font-size: 14px;
+  font-weight: 560;
+}
+
+.strategy-gate-heading > .badge {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.strategy-gate-description {
+  min-height: 46px;
+  margin: 15px 0 12px;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.strategy-gate-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.strategy-gate-checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.strategy-gate-checks li.is-complete {
+  color: var(--strategy-text);
+}
+
+.strategy-check-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 5px;
+  color: var(--strategy-accent);
+}
+
+.strategy-gate-checks li.is-complete .strategy-check-icon {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 55%,
+    var(--strategy-border)
+  );
+  background: var(--strategy-soft);
+}
+
+.strategy-gate-checks li > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.strategy-gate-checks strong {
+  font-weight: 580;
+}
+
+.strategy-gate-checks small {
+  color: var(--strategy-muted);
+  font-size: 8px;
+}
+
+.strategy-ready-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid var(--strategy-border);
+  color: var(--strategy-text);
+  font-size: 9px;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.strategy-ready-toggle input {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin: 1px 0 0;
+  accent-color: var(--strategy-accent);
+}
+
+.strategy-ready-toggle span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.strategy-ready-toggle small {
+  color: var(--strategy-muted);
+  font-size: 8px;
+}
+
+.strategy-gate-warning {
+  margin: 12px 0 0;
+  color: var(--warning, #e8be7f);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.strategy-gate-actions {
+  margin-top: 13px;
+}
+
+.strategy-gate-rule-note {
+  margin-top: 17px;
+  padding: 11px 12px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 7px;
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.strategy-gate-rule-note strong {
+  color: var(--strategy-text);
+  font-weight: 620;
+}
+
+.strategy-mba-panel .panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.strategy-mba-empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.strategy-mba-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+}
+
+.strategy-mba-empty > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.strategy-mba-empty h2 {
+  margin: 4px 0 6px;
+  font-size: 16px;
+  font-weight: 560;
+}
+
+.strategy-mba-empty p {
+  max-width: 860px;
+  margin: 0;
+  color: var(--strategy-muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.strategy-mba-empty > .badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.strategy-mba-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--strategy-border);
+  color: var(--strategy-muted);
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.strategy-mba-note svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--strategy-accent);
+}
+
+.strategy-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  color: var(--strategy-accent);
+  font-size: 10px;
+  text-decoration: none;
+  border: 1px solid var(--strategy-border);
+  border-radius: 7px;
+}
+
+.strategy-source-link:focus-visible {
+  outline: 2px solid var(--strategy-accent);
+  outline-offset: 3px;
+}
+
+.strategy-mba-content-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--strategy-border);
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.strategy-mba-content-summary p {
+  margin: 0;
+  color: var(--strategy-muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+.strategy-mba-plan {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--strategy-border);
+}
+
+.strategy-mba-plan > div:first-child,
+.strategy-mba-plan > .button,
+.strategy-mba-plan > .form-error {
+  grid-column: 1 / -1;
+}
+
+.strategy-mba-plan strong {
+  font-size: 11px;
+}
+
+@media (max-width: 1050px) {
+  .strategy-gate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .strategy-overview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .strategy-overview-card .panel-body {
+    min-height: 0;
+  }
+
+  .strategy-suggested-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .strategy-priority-banner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .strategy-priority-banner > .badge {
+    margin-left: 49px;
+  }
+
+  .strategy-timeline-intro,
+  .strategy-focus-heading,
+  .strategy-mba-empty {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .strategy-timeline-intro p {
+    flex-basis: 100%;
+  }
+
+  .strategy-phase-card {
+    padding: 14px;
+  }
+
+  .strategy-priority-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .strategy-gate-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .strategy-focus-heading > .badge,
+  .strategy-mba-empty > .badge {
+    margin-left: 51px;
+  }
+
+  .strategy-milestone-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .strategy-milestone-title {
+    flex-basis: calc(100% - 39px);
+  }
+
+  .strategy-milestone-row .badge {
+    margin-left: 31px;
+  }
+}
+
+@media (max-width: 520px) {
+  .strategy-roadmap-page {
+    gap: 17px;
+  }
+
+  .strategy-header-actions {
+    width: 100%;
+  }
+
+  .strategy-header-actions .button {
+    flex: 1;
+  }
+
+  .strategy-stat-row {
+    gap: 8px;
+  }
+
+  .strategy-stat-row .stat-value {
+    font-size: 16px;
+  }
+
+  .strategy-suggested-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .strategy-phase-topline h3 {
+    font-size: 14px;
+  }
+
+  .strategy-milestone-title span {
+    white-space: normal;
+  }
+
+  .strategy-focus-heading h2,
+  .strategy-mba-empty h2 {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strategy-roadmap-page * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Strategy room: phase cards read like an operating brief                    */
+/* -------------------------------------------------------------------------- */
+
+.strategy-roadmap-page {
+  --strategy-surface: var(--surface, #121915);
+  --strategy-raised: var(--surface-2, #18231b);
+  --strategy-border: color-mix(
+    in srgb,
+    var(--border-strong, #496249) 48%,
+    var(--border, #29382c)
+  );
+  --strategy-soft: color-mix(in srgb, var(--strategy-accent) 10%, transparent);
+  gap: 27px;
+}
+
+.strategy-roadmap-page .page-header {
+  margin-bottom: 0;
+}
+
+.strategy-priority-banner {
+  border-left: 3px solid var(--strategy-accent);
+  border-radius: 11px;
+  background: color-mix(
+    in srgb,
+    var(--strategy-accent) 5%,
+    var(--strategy-surface)
+  );
+  box-shadow: inset 0 1px 0
+    color-mix(in srgb, var(--strategy-accent) 10%, transparent);
+}
+
+.strategy-overview-card,
+.strategy-howto-card,
+.strategy-focus-panel,
+.strategy-gates-panel,
+.strategy-mba-panel,
+.strategy-timeline-panel {
+  border-top: 2px solid
+    color-mix(in srgb, var(--strategy-accent) 35%, var(--strategy-border));
+  background: var(--strategy-surface);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 17px 46px rgba(0, 0, 0, 0.1);
+}
+
+.strategy-overview-card .panel-body {
+  min-height: 270px;
+}
+
+.strategy-overview-card h2 {
+  font-size: 27px;
+  font-weight: 670;
+  letter-spacing: -0.055em;
+}
+
+.strategy-overview-icon,
+.strategy-focus-icon,
+.strategy-gate-icon,
+.strategy-mba-icon {
+  border-color: color-mix(in srgb, var(--strategy-accent) 32%, transparent);
+  box-shadow: inset 0 1px 0
+    color-mix(in srgb, var(--strategy-accent) 14%, transparent);
+}
+
+.strategy-stat-row .stat {
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--strategy-raised) 68%, transparent);
+}
+
+.strategy-timeline-intro {
+  padding-bottom: 7px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--strategy-border) 65%, transparent);
+}
+
+.strategy-phase-card {
+  position: relative;
+  border-radius: 12px;
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 29%,
+    var(--strategy-border)
+  );
+  background: var(--strategy-surface);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 11px 32px rgba(0, 0, 0, 0.09);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.strategy-phase-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--strategy-accent);
+  opacity: 0.68;
+}
+
+.strategy-phase-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 44%,
+    var(--strategy-border)
+  );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--strategy-accent) 7%, transparent),
+    0 16px 35px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+.strategy-phase-card.is-scaffold {
+  border-style: dashed;
+  background: color-mix(
+    in srgb,
+    var(--strategy-surface) 82%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-phase-card.is-scaffold::before {
+  opacity: 0.23;
+}
+
+.strategy-phase-topline h3 {
+  font-size: 18px;
+  font-weight: 670;
+}
+
+.strategy-priority-list {
+  padding-block: 16px;
+}
+
+.strategy-phase-progress .progress {
+  height: 6px;
+}
+
+.strategy-suggested-row,
+.strategy-milestone-row {
+  border-radius: 8px;
+  border-color: color-mix(in srgb, var(--strategy-border) 86%, transparent);
+  background: color-mix(in srgb, var(--strategy-raised) 85%, transparent);
+  transition:
+    border-color 0.17s ease,
+    transform 0.17s ease,
+    background 0.17s ease;
+}
+
+.strategy-suggested-row:not(:disabled):hover,
+.strategy-milestone-row:hover {
+  background: color-mix(
+    in srgb,
+    var(--strategy-accent) 6%,
+    var(--strategy-raised)
+  );
+  transform: translateY(-1px);
+}
+
+.strategy-milestone-row.is-done {
+  background: color-mix(
+    in srgb,
+    var(--strategy-accent) 8%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-gate-card {
+  position: relative;
+  border-radius: 11px;
+  border-color: color-mix(in srgb, var(--strategy-border) 90%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--strategy-raised) 68%,
+    var(--strategy-surface)
+  );
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.strategy-gate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--strategy-accent);
+  opacity: 0.32;
+}
+
+.strategy-gate-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-accent) 30%,
+    var(--strategy-border)
+  );
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.strategy-gate-card.is-unlocked {
+  background: color-mix(
+    in srgb,
+    var(--strategy-accent) 7%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-gate-card.is-unlocked::before {
+  opacity: 0.88;
+}
+
+.strategy-gate-heading h3,
+.strategy-mba-empty h2 {
+  font-weight: 670;
+}
+
+.strategy-mba-content-summary,
+.strategy-mba-plan,
+.strategy-gate-rule-note {
+  border-color: color-mix(in srgb, var(--strategy-border) 82%, transparent);
+  background: color-mix(in srgb, var(--strategy-raised) 42%, transparent);
+}
+
+@media (max-width: 900px) {
+  .strategy-phase-card:hover,
+  .strategy-gate-card:hover,
+  .strategy-suggested-row:not(:disabled):hover,
+  .strategy-milestone-row:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .strategy-roadmap-page {
+    gap: 21px;
+  }
+
+  .strategy-overview-card h2 {
+    font-size: 23px;
+  }
+
+  .strategy-phase-topline h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .strategy-phase-card {
+    padding: 14px 13px;
+  }
+
+  .strategy-gate-card {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strategy-roadmap-page *,
+  .strategy-roadmap-page *::before,
+  .strategy-roadmap-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+:root[data-motion="reduce"] .strategy-roadmap-page *,
+:root[data-motion="reduce"] .strategy-roadmap-page *::before,
+:root[data-motion="reduce"] .strategy-roadmap-page *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.strategy-phase-card:hover,
+.strategy-suggested-row:not(:disabled):hover,
+.strategy-milestone-row:hover,
+.strategy-gate-card:hover {
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Strategy room visual pass: an evidence board with milestone lanes           */
+/* -------------------------------------------------------------------------- */
+
+.strategy-roadmap-page {
+  --strategy-copper: var(--accent-copper, #d98b61);
+  --strategy-cyan: var(--accent-cyan, #79d8d0);
+  --strategy-accent: var(--strategy-copper);
+  --strategy-rail: color-mix(
+    in srgb,
+    var(--strategy-copper) 22%,
+    var(--strategy-border)
+  );
+  position: relative;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--strategy-copper) 3%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      color-mix(in srgb, var(--strategy-cyan) 3%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 56px 56px;
+}
+
+.strategy-roadmap-page::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -30px 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 95% 5%,
+      color-mix(in srgb, var(--strategy-copper) 11%, transparent),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 3% 58%,
+      color-mix(in srgb, var(--strategy-cyan) 7%, transparent),
+      transparent 28%
+    );
+}
+
+.strategy-roadmap-page button,
+.strategy-roadmap-page select,
+.strategy-roadmap-page input,
+.strategy-roadmap-page textarea,
+.strategy-roadmap-page .tab {
+  border-radius: 4px;
+}
+
+.strategy-roadmap-page .page-header {
+  position: relative;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--strategy-rail);
+}
+
+.strategy-roadmap-page .page-header::after {
+  content: "STRATEGY / SIGNAL / EXECUTION";
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  color: var(--strategy-cyan);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.strategy-roadmap-page .strategy-priority-banner {
+  border-radius: 4px;
+  border-left: 3px solid var(--strategy-copper);
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--strategy-copper) 8%, transparent),
+      transparent 68%
+    ),
+    var(--strategy-surface);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--strategy-copper) 12%, transparent),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.strategy-roadmap-page .strategy-priority-mark,
+.strategy-roadmap-page .strategy-overview-icon,
+.strategy-roadmap-page .strategy-focus-icon,
+.strategy-roadmap-page .strategy-gate-icon,
+.strategy-roadmap-page .strategy-mba-icon {
+  border-radius: 4px;
+  border-color: color-mix(in srgb, var(--strategy-copper) 40%, transparent);
+  color: var(--strategy-copper);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--strategy-cyan) 9%, transparent);
+}
+
+.strategy-roadmap-page .strategy-overview-card,
+.strategy-roadmap-page .strategy-howto-card,
+.strategy-roadmap-page .strategy-focus-panel,
+.strategy-roadmap-page .strategy-gates-panel,
+.strategy-roadmap-page .strategy-mba-panel,
+.strategy-roadmap-page .strategy-timeline-panel {
+  border-radius: 4px;
+  border-top-color: var(--strategy-copper);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--strategy-copper) 10%, transparent),
+    0 22px 52px rgba(0, 0, 0, 0.14);
+}
+
+.strategy-roadmap-page .strategy-stat-row .stat {
+  border-radius: 3px;
+  border-left: 2px solid var(--strategy-cyan);
+  background: color-mix(in srgb, var(--strategy-raised) 72%, transparent);
+}
+
+.strategy-roadmap-page .strategy-timeline-panel {
+  position: relative;
+  overflow: visible;
+}
+
+.strategy-roadmap-page .strategy-phase-list {
+  position: relative;
+  padding-left: 28px;
+}
+
+.strategy-roadmap-page .strategy-phase-list::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 8px;
+  width: 1px;
+  background: linear-gradient(var(--strategy-copper), var(--strategy-cyan));
+  opacity: 0.68;
+}
+
+.strategy-roadmap-page .strategy-phase-card {
+  border-radius: 4px;
+  border-color: var(--strategy-rail);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--strategy-copper) 5%, var(--strategy-surface)),
+      var(--strategy-surface) 69%
+    ),
+    var(--strategy-surface);
+  transform-style: preserve-3d;
+}
+
+.strategy-roadmap-page .strategy-phase-card::after {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 27px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--strategy-copper);
+  background: var(--strategy-surface);
+  box-shadow: 0 0 0 5px
+    color-mix(in srgb, var(--strategy-copper) 8%, transparent);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.strategy-roadmap-page .strategy-phase-card::before {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--strategy-copper),
+    var(--strategy-cyan)
+  );
+}
+
+.strategy-roadmap-page .strategy-phase-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--strategy-copper) 48%,
+    var(--strategy-border)
+  );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--strategy-copper) 10%, transparent),
+    12px 15px 0 color-mix(in srgb, var(--strategy-copper) 4%, transparent),
+    0 22px 40px rgba(0, 0, 0, 0.18);
+}
+
+.strategy-roadmap-page .strategy-phase-card.is-scaffold {
+  border-style: dashed;
+  background: color-mix(
+    in srgb,
+    var(--strategy-surface) 82%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-roadmap-page .strategy-priority-list {
+  border-color: var(--strategy-rail);
+  background: color-mix(in srgb, var(--strategy-cyan) 3%, transparent);
+}
+
+.strategy-roadmap-page .strategy-priority-list svg,
+.strategy-roadmap-page .strategy-section-label {
+  color: var(--strategy-cyan);
+}
+
+.strategy-roadmap-page .strategy-phase-progress .progress > span {
+  transform-origin: left center;
+  animation: strategy-progress-in 900ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.strategy-roadmap-page .strategy-suggested-row,
+.strategy-roadmap-page .strategy-milestone-row {
+  border-radius: 3px;
+  border-left: 2px solid
+    color-mix(in srgb, var(--strategy-cyan) 25%, var(--strategy-border));
+}
+
+.strategy-roadmap-page .strategy-suggested-row:not(:disabled):hover,
+.strategy-roadmap-page .strategy-milestone-row:hover {
+  border-left-color: var(--strategy-copper);
+  background: color-mix(
+    in srgb,
+    var(--strategy-copper) 7%,
+    var(--strategy-raised)
+  );
+}
+
+.strategy-roadmap-page .strategy-gate-card {
+  border-radius: 4px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in srgb, var(--strategy-cyan) 8%, transparent),
+      transparent 42%
+    ),
+    color-mix(in srgb, var(--strategy-raised) 70%, var(--strategy-surface));
+}
+
+.strategy-roadmap-page .strategy-gate-card::before {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--strategy-cyan),
+    var(--strategy-copper)
+  );
+}
+
+@keyframes strategy-progress-in {
+  from {
+    opacity: 0.35;
+    transform: scaleX(0.02);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 901px) {
+  .strategy-roadmap-page .strategy-phase-card:hover {
+    transform: perspective(950px) translate3d(0, -4px, 11px) rotateX(0.65deg);
+  }
+
+  .strategy-roadmap-page .strategy-gate-card:hover {
+    transform: perspective(900px) translate3d(0, -3px, 8px) rotateY(-0.6deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .strategy-roadmap-page .page-header::after {
+    display: none;
+  }
+
+  .strategy-roadmap-page .strategy-phase-list {
+    padding-left: 18px;
+  }
+
+  .strategy-roadmap-page .strategy-phase-list::before {
+    left: 4px;
+  }
+
+  .strategy-roadmap-page .strategy-phase-card::after {
+    left: -23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strategy-roadmap-page .strategy-phase-progress .progress > span {
+    animation: none !important;
+    transform: none;
+  }
+
+  .strategy-roadmap-page *,
+  .strategy-roadmap-page *::before,
+  .strategy-roadmap-page *::after {
+    transition: none !important;
+  }
+}
+
+:root[data-motion="reduce"] .strategy-roadmap-page .progress > span {
+  animation: none !important;
+  transform: none;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "studyos-nexus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "preview:secure": "node scripts/serve-production-test.mjs",
+    "test:production": "npm run build && STUDYOS_SECURE_PREVIEW=1 STUDYOS_BASE_URL=http://127.0.0.1:4174 playwright test --output=test-results/production-upgrade",
+    "export:plan": "node scripts/export-plan.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src e2e scripts *.ts *.json *.html docs/*.md README.md",
+    "format:check": "prettier --check src e2e scripts *.ts *.json *.html docs/*.md README.md"
+  },
+  "dependencies": {
+    "idb": "^8.0.3",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.55.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prettier": "^3.9.9",
+    "typescript": "^5.9.2",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}
